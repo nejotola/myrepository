@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:simpleType name="FirstNameType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+
+	<xsd:simpleType name="LastNameType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+
+	<xsd:simpleType name="SexType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Male"/>
+			<xsd:enumeration value="Female"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:element name="Status" type="xsd:string"/>
+	<xsd:element name="Email" type="xsd:string"/>
+	<xsd:element name="Percentage" type="xsd:decimal"/>
+	<xsd:element name="FirstName" type="FirstNameType"/>
+	<xsd:element name="DOB" type="xsd:string"/>
+	<xsd:element name="Phone" type="xsd:int"/>
+	<xsd:element name="Sex" type="SexType"/>
+	<xsd:element name="LastName" type="LastNameType"/>
+	<xsd:element name="ID" type="xsd:string"/>
+	<xsd:element name="Course" type="xsd:string"/>
+
+
+	<xsd:element name="Student">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="1" ref="FirstName"/>
+				<xsd:element minOccurs="0" ref="LastName"/>
+				<xsd:element minOccurs="1" ref="DOB"/>
+				<xsd:element minOccurs="1" ref="Sex"/>
+				<xsd:element minOccurs="1" ref="ID"/>
+				<xsd:element minOccurs="0" ref="Course"/>
+				<xsd:element minOccurs="0" ref="Phone"/>
+				<xsd:element minOccurs="1" ref="Email"/>
+				<xsd:element minOccurs="1" ref="Percentage"/>
+				<xsd:element minOccurs="1" ref="Status"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
